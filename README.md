@@ -6,7 +6,7 @@ Section: __Fill your class section__.
 
 Team Mates:
 1. __MUHAMMAD ADIB BIN MOHAMAD TAZMI__ and __2216265__
-2. __Fill name__ and __matric no__
+2. __MUHAMMAD IRFAN BIN FAIRUZ AZIM__ and __2211915__
 3. __Fill name__ and __matric no__
 
 ## Rules
