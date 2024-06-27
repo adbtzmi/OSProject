@@ -415,7 +415,7 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 ## STEP 1:
 ## Create Networks ##
 docker network create bluenet
-docker network create rednet`
+docker network create rednet
 
 ## STEP 2: (automatically running)
 ## Create (1) Container in background called "c1" running busybox image ##
@@ -424,11 +424,25 @@ docker run -itd --net rednet --name c2 busybox sh
 ```
 ***Questions:***
 
-1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** __Fill answer here__.
-2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** __Fill answer here__.
-3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** __Fill answer here__.
-4. What is the network address for the running container c1 and c2? ***(1 mark)*** __Fill answer here__.
-5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
+1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** <br> __Answer: BusyBox is a software suite that provides several Unix utilities in a single executable file, designed for embedded systems with limited resources.
+The command switch --name is used to assign a specific name to a container, making it easier to reference.__.
+2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)***
+    ```bash
+    @adbtzmi ➜ /workspaces/OSProject/myroot (main) $ docker network ls
+    NETWORK ID     NAME      DRIVER    SCOPE
+    36e7e6d85102   bluenet   bridge    local
+    c2c40e596701   bridge    bridge    local
+    54d0735d0265   host      host      local
+    9f40d0930236   none      null      local
+    f8f852d29482   rednet    bridge    local
+    ```
+3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** <br> __Answer: Bluenet:172.18.0.1 and Rednet: 172.19.0.1__.
+4. What is the network address for the running container c1 and c2? ***(1 mark)*** <br> __Answer: C1: 172.18.0.2 and C2: 172.19.0.2__.
+5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** <br> __Answer: No__.
+    ```bash
+    @adbtzmi ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
+    ping: bad address 'c2'
+    ```
 
 ## Bridging two SUB Networks
 1. Let's try this again by creating a network to bridge the two containers in the two subnetworks
@@ -440,8 +454,22 @@ docker exec c1 ping c2
 ```
 ***Questions:***
 
-1. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
-2. What is different from the previous ping in the section above? ***(1 mark)*** __Fill answer here__.
+1. Are you able to ping? Show your output . ***(1 mark)*** <br> __Answer: Yes__.
+    ```bash
+    @adbtzmi ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
+    PING c2 (172.20.0.3): 56 data bytes
+    64 bytes from 172.20.0.3: seq=0 ttl=64 time=0.174 ms
+    64 bytes from 172.20.0.3: seq=1 ttl=64 time=0.078 ms
+    64 bytes from 172.20.0.3: seq=2 ttl=64 time=0.059 ms
+    64 bytes from 172.20.0.3: seq=3 ttl=64 time=0.066 ms
+    64 bytes from 172.20.0.3: seq=4 ttl=64 time=0.066 ms
+    64 bytes from 172.20.0.3: seq=5 ttl=64 time=0.077 ms
+    64 bytes from 172.20.0.3: seq=6 ttl=64 time=0.075 ms
+    64 bytes from 172.20.0.3: seq=7 ttl=64 time=0.061 ms
+    64 bytes from 172.20.0.3: seq=8 ttl=64 time=0.075 ms
+    64 bytes from 172.20.0.3: seq=9 ttl=64 time=0.060 ms
+    ```
+2. What is different from the previous ping in the section above? ***(1 mark)*** <br> __Answer:Previously, the ping command failed with the error "ping: bad address 'c2'", indicating that the containers were unable to communicate across separate networks. After creating and connecting both containers to a new bridge network (bridgenet), the ping command succeeded, showing that the containers can now communicate__.
 
 ## Intermediate Level (10 marks bonus)
 
@@ -582,10 +610,17 @@ INSERT INTO mytable (name, value) VALUES ('example1', 'value1'), ('example2', 'v
 
 You have now set up a Node.js application in a Docker container on nodejsnet netowrk and a MySQL database in another Docker container on mysqlnet network. Now bridge the two network together.
 
-***Questions:***
+1. What is the output of step 5 above, explain the error? ***(1 mark)***
+      ```
+      @adbtzmi ➜ /workspaces/OSProject/nodejs-app (main) $ curl http://localhost:3000/random
+      Server Error
+      ```
+    __Answer: The output would likely be an error indicating that the Node.js application cannot connect to the MySQL database. This is because the Node.js container and the MySQL container are on separate networks and cannot communicate with each other until they are bridged.__.
 
-1. What is the output of step 5 above, explain the error? ***(1 mark)*** __Fill answer here__.
-2. Show the instruction needed to make this work. ***(1 mark)*** __Fill answer here__.
+2. Show the instruction needed to make this work. ***(1 mark)*** <br> __Answer: To make the setup work, you need to connect the Node.js container to the mysqlnet network using the following command:__.
+    ```sh
+    docker network connect mysqlnet nodejs-container
+    ```
 
 
 
