@@ -24,8 +24,10 @@ Team Mates:
 
 ***Questions:***
 
-1. What is the link of the fork OSProject in your repository. ***(1 mark)*** __Fill answer here__.
-2. How many files and folders are in this repository. ***(1 mark)*** __Answer: One folder for image that consist 6 files and one file which is readme file__.
+1. What is the link of the fork OSProject in your repository. ***(1 mark)*** <br>
+   __Answer: https://github.com/adbtzmi/OSProject.git__
+2. How many files and folders are in this repository. ***(1 mark)*** <br>
+   __Answer: One folder for image that consist 6 files and one file which is readme file__
 
 
 ## Exploring github codespaces
