@@ -2,7 +2,7 @@
 
 Group Name: __Ipeyy__. 
 
-Section: __Fill your class section__. 
+Section: __Section 1__. 
 
 Team Mates:
 1. __MUHAMMAD ADIB BIN MOHAMAD TAZMI__ and __2216265__
@@ -25,7 +25,7 @@ Team Mates:
 ***Questions:***
 
 1. What is the link of the fork OSProject in your repository. ***(1 mark)*** __Fill answer here__.
-2. How many files and folders are in this repository. ***(1 mark)*** __Fill answer here__.
+2. How many files and folders are in this repository. ***(1 mark)*** __Answer: One folder for image that consist 6 files and one file which is readme file__.
 
 
 ## Exploring github codespaces
@@ -57,9 +57,9 @@ Team Mates:
 
 ***Questions:***
 
-1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** __Fill answer here__.
-2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** __Fill answer here__.
-3. Why must we commit and sync our current work on source control? ***(1 mark)*** __Fill answer here__.
+1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** __Answer: Ubuntu__.
+2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** __Answer: 2-core CPU, 4 GB RAM, and 32 GB disk and 4-core CPU, 8 GB RAM, and 64 GB disk__.
+3. Why must we commit and sync our current work on source control? ***(1 mark)*** __Answer: to ensure that our changes are saved, tracked, and shared with the rest of the team.__.
 
 ## Exploring the Terminal
 
