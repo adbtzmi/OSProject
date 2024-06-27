@@ -78,12 +78,12 @@ codespace
 
 Look at the TERMINAL tab. Run the following commands and provide the output here. 
 
-1. Run the command **pwd** . ***(1 mark)*** 
+1. R@Ipannazimommand **pwd** . ***(1 mark)*** 
     ```bash
     @adbtzmi ➜ /workspaces/OS_Project (main) $ pwd
     /workspaces/OS_Project
     ```
-2. Run the command **cat /etc/passwd** . ***(1 mark)*** 
+2. R@Ipannazimommand **cat /etc/passwd** . ***(1 mark)*** 
     ```bash
     @adbtzmi ➜ /workspaces/OS_Project (main) $ cat /etc/passwd
     root:x:0:0:root:/root:/bin/bash
@@ -112,7 +112,7 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
     codespace:x:1000:1000::/home/codespace:/bin/bash
     sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
     ```
-3. Run the command **df** . ***(1 mark)*** 
+3. R@Ipannazimommand **df** . ***(1 mark)*** 
     ```bash
     @adbtzmi ➜ /workspaces/OS_Project (main) $ df
     Filesystem     1K-blocks     Used Available Use% Mounted on
@@ -123,7 +123,7 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
     /dev/sda1       46127956      100  43752280   1% /tmp
     /dev/loop3      32847680 10380772  20772812  34% /workspaces
     ```
-4. Run the command **du** . ***(1 mark)*** 
+4. R@Ipannazimommand **du** . ***(1 mark)*** 
     ```bash
     @adbtzmi ➜ /workspaces/OS_Project (main) $ du
     1972    ./images
@@ -221,12 +221,12 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
     2700    ./.git
     4696 
     ```
-5. Run the command **ls** . ***(1 mark)*** 
+5. R@Ipannazimommand **ls** . ***(1 mark)*** 
     ```bash
     @adbtzmi ➜ /workspaces/OS_Project (main) $ ls
     README.md  images
     ```
-6. Run the command **ls -asl** . ***(1 mark)*** 
+6. R@Ipannazimommand **ls -asl** . ***(1 mark)*** 
     ```bash
     @adbtzmi ➜ /workspaces/OS_Project (main) $ ls -asl
     total 36
@@ -236,14 +236,14 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
     20 -rw-rw-rw-  1 codespace root 17791 Jun 27 11:24 README.md
      4 drwxrwxrwx+ 2 codespace root  4096 Jun 27 11:24 images
     ```
-7. Run the command **free -h** . ***(1 mark)*** 
+7. R@Ipannazimommand **free -h** . ***(1 mark)*** 
     ```bash
     @adbtzmi ➜ /workspaces/OS_Project (main) $ free -h
                   total        used        free      shared  buff/cache   available
     Mem:          7.7Gi       1.4Gi       231Mi        68Mi       6.1Gi       6.0Gi
     Swap:            0B          0B          0B
     ```
-8. Run the command **cat /proc/cpuinfo** . ***(1 mark)*** 
+8. R@Ipannazimommand **cat /proc/cpuinfo** . ***(1 mark)*** 
     ```bash
     @adbtzmi ➜ /workspaces/OS_Project (main) $ cat /proc/cpuinfo
     processor       : 0
@@ -342,7 +342,7 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
        3949 codespa+  20   0   16632  11508   3456 S   0.0   0.1 
       16730 codespa+  20   0   10900   3840   3328 R   0.0   0.0 
     ```
-10. Run the command **uname -a**. ***(1 mark)*** 
+10. @Ipannazimcommand **uname -a**. ***(1 mark)*** 
     ```bash
     @adbtzmi ➜ /workspaces/OS_Project (main) $ uname -a
     Linux codespaces-24388d 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59:24 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
