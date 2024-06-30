@@ -370,14 +370,22 @@ At the terminal, create a new directory called **myroot**, and run a instance of
 
 ***Questions:***
 
-1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** __Fill answer here__.
+1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** <br> __Answer: No file found__.
+    ```bash
+    @adbtzmi ➜ /workspaces/OSProject/myroot (main) $ ls -l
+    total 0
+    ```
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
 //use sudo and chown
 sudo chown -R codespace:codespace myroot
 
 ```
-*** __Fill answer here__.***
+__Answer: Yes. The permission of the files to user codespace can be change but there is no such file or directory found.__.
+  ```bash
+  @adbtzmi ➜ /workspaces/OSProject/myroot (main) $ sudo chown -R codespace:codespace myroot
+  chown: cannot access 'myroot': No such file or directory
+  ```
 
 ## You are on your own, create your own static webpage
 
@@ -403,9 +411,13 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 
 ***Questions:***
 
-1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** __Fill answer here__.
-2. What port is the apache web server running. ***(1 mark)*** __Fill answer here__.
-3. What port is open for http protocol on the host machine? ***(1 mark)*** __Fill answer here__.
+1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** 
+    ```bash
+    @adbtzmi ➜ /workspaces/OSProject/myroot (main) $ ls -ld /workspaces/OSProject/webpage
+    drwxrwxrwx+ 2 codespace codespace 4096 May 31 15:50 /workspaces/OSProject/webpage
+    ```
+2. What port is the apache web server running. ***(1 mark)*** <br> __Answer: The Apache web server inside the Docker container is running on port 80__.
+3. What port is open for http protocol on the host machine? ***(1 mark)*** <br> __Answer: The port open for HTTP protocol on the host machine is port 8080__.
 
 ## Create SUB Networks
 
