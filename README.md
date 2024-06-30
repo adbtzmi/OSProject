@@ -7,7 +7,7 @@ Section: __Section 1__.
 Team Mates:
 1. __MUHAMMAD ADIB BIN MOHAMAD TAZMI__ and __2216265__
 2. __MUHAMMAD IRFAN BIN FAIRUZ AZIM__ and __2211915__
-3. __Fill name__ and __matric no__
+3. __MUHAMMAD AMIR SYAHMI BIN ROHMAT ROSE__ and __2215955__
 
 ## Rules
 1. You are allowed to have **3 group** members. *Exception* is allowed **IFF (if and only if)** you are allowed to have 4 group members if you are a **multinational** or a **multigender** group. 
